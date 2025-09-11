@@ -3,12 +3,13 @@ import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDodlkU4DYrFPxNB64MvUdN77-1JpumN4Q",
-  authDomain: "ncg-go-ab198.firebaseapp.com",
-  projectId: "ncg-go-ab198",
-  storageBucket: "ncg-go-ab198.firebasestorage.app",
-  messagingSenderId: "875051196644",
-  appId: "1:875051196644:web:5306b9646b55ef54a80cf1"
+  apiKey: "AIzaSyAGiwe80NYwhzQN8Y7mLJ1ycRSlk0J-0HA",
+  authDomain: "ncg-go-95322.firebaseapp.com",
+  projectId: "ncg-go-95322",
+  storageBucket: "ncg-go-95322.firebasestorage.app",
+  messagingSenderId: "483660709144",
+  appId: "1:483660709144:web:2077cb59659901f315f26d",
+  measurementId: "G-9LRFJGD4XW"
 };
 
 const app = initializeApp(firebaseConfig)
