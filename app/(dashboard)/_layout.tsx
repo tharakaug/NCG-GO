@@ -63,12 +63,12 @@ const DashboardLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="profile"
+          name="journeys"
           options={{
-            title: "Profile",
+            title: "Journeys",
             tabBarIcon: (data) => (
               <MaterialIcons
-                name="person"
+                name="route"
                 size={data.size}
                 color={data.color}
               />
@@ -76,12 +76,12 @@ const DashboardLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="setting"
+          name="profile"
           options={{
-            title: "Setting",
+            title: "Profile",
             tabBarIcon: (data) => (
               <MaterialIcons
-                name="settings"
+                name="person"
                 size={data.size}
                 color={data.color}
               />

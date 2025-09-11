@@ -49,7 +49,7 @@ const Register = () => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
-        className="bg-surface border border-gray-300 rounded px-4 py-3 mb-4 text-gray-900"
+        className="bg-surface border border-gray-300 rounded px-4 py-3 mb-4 text-gray-900"a
       />
       <TextInput
         placeholder="Password"
