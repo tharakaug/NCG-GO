@@ -142,9 +142,10 @@ import {
   Modal,
   StyleSheet,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const journeys = [
-  {
+ {
     from: "Moratuwa",
     to: "Karainagar",
     busNo: "87",
@@ -252,7 +253,6 @@ const JourneyScreen = () => {
   };
 
   const handleBookingSubmit = () => {
-    console.log("Booking Data:", { journey: selectedJourney, ...formData });
     Alert.alert(
       "Booking Submitted!",
       `You have booked a trip from ${selectedJourney.from} to ${selectedJourney.to}.`
@@ -263,76 +263,47 @@ const JourneyScreen = () => {
   };
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "#f8fafc", padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: "bold", color: "#1d4ed8", marginBottom: 16 }}>
+    <ScrollView style={{ flex: 1, backgroundColor: "#f0f4f8", padding: 16 }}>
+      <Text style={{ fontSize: 26, fontWeight: "bold", color: "#1E3A8A", marginBottom: 16 }}>
         NCG Express Journeys 🚍
       </Text>
 
       {journeys.map((j, idx) => (
-        <View
+        <LinearGradient
           key={idx}
-          style={{
-            backgroundColor: "#e2e8f0",
-            borderRadius: 20,
-            padding: 16,
-            marginBottom: 16,
-            shadowColor: "#000",
-            shadowOpacity: 0.1,
-            shadowRadius: 6,
-            shadowOffset: { width: 0, height: 3 },
-          }}
+          colors={["#1E3A8A", "#274BB0"]}
+          start={[0, 0]}
+          end={[1, 1]}
+          style={styles.journeyCard}
         >
-          <Text style={{ fontSize: 18, fontWeight: "bold", color: "#1e293b", marginBottom: 4 }}>
-            {j.from} → {j.to}
-          </Text>
-
+          <Text style={styles.journeyTitle}>{j.from} → {j.to}</Text>
           {j.busNo && (
-            <Text style={{ color: "#475569", marginBottom: 4 }}>
+            <Text style={styles.journeySubText}>
               Bus No: {j.busNo} | {j.type}
             </Text>
           )}
+          {j.price && <Text style={styles.priceText}>Price: {j.price}</Text>}
 
-          {j.price && <Text style={{ color: "#334155", marginBottom: 8 }}>Price: {j.price}</Text>}
-
-          <Text style={{ fontWeight: "600", color: "#1e293b", marginBottom: 8 }}>Timetable:</Text>
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <Text style={styles.timetableLabel}>Timetable:</Text>
+          <View style={styles.timesContainer}>
             {j.times.map((t, i) => (
-              <View
-                key={i}
-                style={{
-                  backgroundColor: "#bfdbfe",
-                  paddingHorizontal: 10,
-                  paddingVertical: 6,
-                  borderRadius: 12,
-                  marginRight: 8,
-                  marginBottom: 8,
-                }}
-              >
-                <Text style={{ color: "#1d4ed8", fontWeight: "500" }}>{t}</Text>
+              <View key={i} style={styles.timeTag}>
+                <Text style={styles.timeText}>{t}</Text>
               </View>
             ))}
           </View>
 
-          <TouchableOpacity
-            style={{
-              marginTop: 12,
-              backgroundColor: "#1d4ed8",
-              paddingVertical: 10,
-              borderRadius: 12,
-              alignItems: "center",
-            }}
-            onPress={() => openBookingForm(j)}
-          >
-            <Text style={{ color: "white", fontWeight: "600" }}>Book Now</Text>
+          <TouchableOpacity style={styles.bookButton} onPress={() => openBookingForm(j)}>
+            <Text style={styles.bookButtonText}>Book Now</Text>
           </TouchableOpacity>
-        </View>
+        </LinearGradient>
       ))}
 
       {/* Booking Modal */}
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={{ fontSize: 18, fontWeight: "bold", marginBottom: 12 }}>
+            <Text style={styles.modalTitle}>
               Book Trip: {selectedJourney?.from} → {selectedJourney?.to}
             </Text>
 
@@ -364,18 +335,15 @@ const JourneyScreen = () => {
               onChangeText={(text) => handleInputChange("passengers", text)}
             />
 
-            <TouchableOpacity
-              style={styles.submitButton}
-              onPress={handleBookingSubmit}
-            >
-              <Text style={{ color: "white", fontWeight: "600" }}>Submit Booking</Text>
+            <TouchableOpacity style={styles.submitButton} onPress={handleBookingSubmit}>
+              <Text style={styles.submitButtonText}>Submit Booking</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.submitButton, { backgroundColor: "#ef4444", marginTop: 8 }]}
               onPress={() => setModalVisible(false)}
             >
-              <Text style={{ color: "white", fontWeight: "600" }}>Cancel</Text>
+              <Text style={styles.submitButtonText}>Cancel</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -385,6 +353,65 @@ const JourneyScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  journeyCard: {
+    borderRadius: 20,
+    padding: 16,
+    marginBottom: 16,
+    shadowColor: "#1E3A8A",
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 5,
+  },
+  journeyTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "white",
+    marginBottom: 4,
+  },
+  journeySubText: {
+    color: "#d1d5db",
+    marginBottom: 4,
+  },
+  priceText: {
+    color: "#f3f4f6",
+    marginBottom: 8,
+  },
+  timetableLabel: {
+    fontWeight: "600",
+    color: "white",
+    marginBottom: 6,
+  },
+  timesContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginBottom: 12,
+  },
+  timeTag: {
+    backgroundColor: "rgba(255,255,255,0.2)",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 12,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  timeText: {
+    color: "white",
+    fontWeight: "500",
+    fontSize: 12,
+  },
+  bookButton: {
+    marginTop: 8,
+    backgroundColor: "#facc15",
+    paddingVertical: 10,
+    borderRadius: 12,
+    alignItems: "center",
+  },
+  bookButtonText: {
+    color: "#1E3A8A",
+    fontWeight: "600",
+    fontSize: 16,
+  },
   modalContainer: {
     flex: 1,
     backgroundColor: "rgba(0,0,0,0.5)",
@@ -401,6 +428,12 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 3 },
   },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 12,
+    color: "#1E3A8A",
+  },
   input: {
     borderWidth: 1,
     borderColor: "#cbd5e1",
@@ -409,10 +442,14 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   submitButton: {
-    backgroundColor: "#1d4ed8",
+    backgroundColor: "#1E3A8A",
     paddingVertical: 12,
     borderRadius: 12,
     alignItems: "center",
+  },
+  submitButtonText: {
+    color: "white",
+    fontWeight: "600",
   },
 });
 
