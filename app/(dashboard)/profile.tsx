@@ -15,8 +15,24 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 import { MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { profileService } from "@/services/profileService";
+import { useRouter } from "expo-router";
+
 
 export default function ProfileScreen() {
+
+const router = useRouter();
+
+const handleLogout = async () => {
+  try {
+    await profileService.logout();
+    router.replace("/login"); // redirect after logout
+  } catch (error) {
+    console.error("Logout error:", error);
+  }
+};
+
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "#f0f4f8" }}>
       {/* Cover Banner */}
@@ -79,10 +95,20 @@ export default function ProfileScreen() {
           <Text style={styles.actionText}>Help & Support</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.actionButton, { backgroundColor: "#ffe6e6" }]}>
+        {/* <TouchableOpacity style={[styles.actionButton, { backgroundColor: "#ffe6e6" }]}>
           <MaterialIcons name="logout" size={20} color="#ef4444" />
           <Text style={[styles.actionText, { color: "#ef4444" }]}>Logout</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+
+        <TouchableOpacity
+  style={[styles.actionButton, { backgroundColor: "#ffe6e6" }]}
+  onPress={handleLogout}
+>
+  <MaterialIcons name="logout" size={20} color="#ef4444" />
+  <Text style={[styles.actionText, { color: "#ef4444" }]}>Logout</Text>
+</TouchableOpacity>
+
+
       </View>
     </ScrollView>
   );
