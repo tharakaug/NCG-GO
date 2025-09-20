@@ -317,6 +317,7 @@ import { profileService } from "@/services/profileService";
 import { useRouter } from "expo-router";
 import { User } from "firebase/auth";
 
+
 export default function ProfileScreen() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
