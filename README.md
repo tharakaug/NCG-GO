@@ -32,23 +32,20 @@
 
 ---
 
-## 📁 Project Structure
+## 🎥 Demo Video
 
-NCG-GO/
-├── app/ # Screens & routes (Expo Router)
-│ ├── (auth)/ # login, register
-│ ├── settings.tsx
-│ ├── journeys/ # journey listing, booking flows
-│ ├── profile.tsx
-│ └── index.tsx # home dashboard
-├── assets/ # Images / fonts / icons
-├── services/ # API & Firebase service layers
-│ ├── authService.ts
-│ ├── profileService.ts
-│ └── journeysService.ts
-├── firebase.ts # Firebase initialization
-├── global.css # Tailwind base
-├── tailwind.config.js
-├── package.json
-└── README.md
+▶️ [Watch Demo on YouTube](https://youtube.com/shorts/-dxQcck8cAc?si=DpMh6xrKjUTrITXt&authuser=0)  
+
+_This video shows the full flow: login → browse journeys → seat booking → profile management → dark mode toggle._
+
+---
+
+## 📱 Download APK
+
+📦 [Download Latest APK](https://expo.dev/artifacts/eas/aoTUTFYLx7h6mdPJ2TpCu7.apk?authuser=0)  
+
+_You can install this APK on your Android device to test the app without using Expo._
+
+---
+
 
