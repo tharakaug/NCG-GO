@@ -1,30 +1,3 @@
-// import { auth } from "@/firebase";
-// import { signOut, User, updateProfile } from "firebase/auth";
-
-
-// class ProfileService {
-//   async logout(): Promise<void> {
-//     await signOut(auth);
-//   }
-
-//   getCurrentUser(): User | null {
-//     return auth.currentUser;
-//   }
-
-//   isLoggedIn(): boolean {
-//     return auth.currentUser !== null;
-//   }
-
-//   async updateProfile(data: { displayName?: string; photoURL?: string }) {
-//     if (!auth.currentUser) throw new Error("No logged in user");
-//     await updateProfile(auth.currentUser, data);
-//     return auth.currentUser;
-//   }
-// }
-
-// export const profileService = new ProfileService();
-
-
 import { auth, db } from "@/firebase";
 import { signOut, User, updateProfile } from "firebase/auth";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
