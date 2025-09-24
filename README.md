@@ -1,10 +1,6 @@
 # 🚍 NCG-GO (NCG Bus Booking & Timetable App)
 
 <p align="center">
-  <img src="./assets/logo.png" alt="NCG-GO Logo" width="150"/>
-</p>
-
-<p align="center">
   <b>NCG-GO</b> is a modern mobile application for <b>NCG Express bus services in Sri Lanka</b>.  
   Browse bus routes & timetables, book seats, manage your profile, and customize app settings — all in one sleek React Native app.  
 </p>
