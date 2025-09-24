@@ -34,3 +34,21 @@
 
 ## 📁 Project Structure
 
+NCG-GO/
+├── app/ # Screens & routes (Expo Router)
+│ ├── (auth)/ # login, register
+│ ├── settings.tsx
+│ ├── journeys/ # journey listing, booking flows
+│ ├── profile.tsx
+│ └── index.tsx # home dashboard
+├── assets/ # Images / fonts / icons
+├── services/ # API & Firebase service layers
+│ ├── authService.ts
+│ ├── profileService.ts
+│ └── journeysService.ts
+├── firebase.ts # Firebase initialization
+├── global.css # Tailwind base
+├── tailwind.config.js
+├── package.json
+└── README.md
+
