@@ -1,50 +1,50 @@
-# Welcome to your Expo app 👋
+# 🚍 NCG-GO (NCG Bus Booking & Timetable App)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p align="center">
+  <b>NCG-GO</b> is a modern mobile application for <b>NCG Express bus services in Sri Lanka</b>.  
+  Browse bus routes & timetables, book seats, manage your profile, and customize app settings — all in one sleek React Native app.  
+</p>
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+✅ **Browse Routes & Timetables** – Full schedules between major cities  
+✅ **Booking System** – Reserve seats with live availability  
+✅ **User Profile** – Edit your name, profile picture, and account info  
+✅ **Settings** – Toggle dark mode 🌙, notifications 🔔, language 🌐  
+✅ **Help & Support** – FAQ, Contact & Support  
+✅ **Authentication** – Secure login/register via Firebase Auth 🔐  
+✅ **Persistent Settings** – User preferences synced with Firestore ⚡  
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠 Tech Stack
 
-In the output, you'll find options to open the app in a
+| Layer        | Technology |
+|--------------|------------|
+| 🎨 Frontend  | React Native (Expo) |
+| 🔐 Auth      | Firebase Auth |
+| ☁️ Database  | Firestore |
+| ⚙️ Backend   | Node.js / Firebase Functions (optional) |
+| 🎭 Styling   | Tailwind / NativeWind |
+| ✨ UI/UX     | Expo LinearGradient, Animations, Modals, Toasts |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🎥 Demo Video
 
-## Get a fresh project
+▶️ [**Watch Demo on YouTube**](https://youtube.com/shorts/-dxQcck8cAc?si=DpMh6xrKjUTrITXt&authuser=0)  
 
-When you're ready, run:
+_This demo covers the full flow: **Login → Browse Journeys → Seat Booking → Profile → Dark Mode**._
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📱 Download APK
 
-## Learn more
+📦 [**Download Latest APK**](https://expo.dev/artifacts/eas/aoTUTFYLx7h6mdPJ2TpCu7.apk?authuser=0)  
 
-To learn more about developing your project with Expo, look at the following resources:
+👉 Install the APK on your Android device and try the app instantly!  
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
